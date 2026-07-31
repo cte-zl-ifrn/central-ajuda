@@ -30,7 +30,7 @@ a {
   text-decoration: none;
   &:hover {
     text-decoration: underline;
-    color: darken($ifrn-blue, 15%);
+    color: #004085;
   }
 }
 
@@ -109,7 +109,7 @@ a {
 // Callouts / Blockquotes (Dica & Importante)
 blockquote {
   border-left: 4px solid $ifrn-blue;
-  background-color: lighten($ifrn-blue, 48%);
+  background-color: #e3f2fd;
   padding: 1rem 1.25rem;
   margin: 1.5rem 0;
   border-radius: 0 6px 6px 0;
@@ -124,18 +124,18 @@ blockquote {
   }
 
   // Dica Callout
-  &.dica, &:has(strong:contains("Dica")) {
+  &.dica {
     border-left-color: $ifrn-green;
-    background-color: lighten($ifrn-green, 60%);
+    background-color: #e8f5e9;
     strong {
       color: $ifrn-green;
     }
   }
 
   // Importante Callout
-  &.importante, &:has(strong:contains("Importante")) {
+  &.importante {
     border-left-color: $ifrn-red;
-    background-color: lighten($ifrn-red, 45%);
+    background-color: #ffebee;
     strong {
       color: $ifrn-red;
     }
