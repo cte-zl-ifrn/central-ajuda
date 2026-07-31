@@ -1,0 +1,51 @@
+# Configuração Jekyll - Central de Ajuda IFRN
+title: Central de Ajuda
+description: Central de Ajuda Campus Avançado Natal-Zona Leste do IFRN
+url: "https://cte-zl-ifrn.github.io"
+baseurl: "/central-ajuda"
+repository: "cte-zl-ifrn/central-ajuda"
+
+# Tema Just the Docs
+remote_theme: just-the-docs/just-the-docs
+color_scheme: "light"
+search_enabled: true
+heading_anchors: true
+
+# Links auxiliares no topo
+aux_links:
+  "Portal EaD": "https://ead.ifrn.edu.br/"
+  "SUAP": "https://suap.ifrn.edu.br/"
+
+# Rodapé
+footer_content: "Copyright © 2026 Campus Avançado Natal-Zona Leste - IFRN. Todos os direitos reservados."
+
+# Plugins Jekyll
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Coleções de Documentação
+collections:
+  docs:
+    output: true
+    permalink: /docs/:collection/:path/
+
+# Configurações padrão
+defaults:
+  - scope:
+      path: ""
+      type: docs
+    values:
+      layout: "default"
+      nav_enabled: true
+      has_children: false
+      has_toc: true
+
+# Sass / SCSS
+sass:
+  sass_dir: _sass
+  style: compressed

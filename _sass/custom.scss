@@ -1,0 +1,153 @@
+// Custom SCSS - Identidade IFRN para Just the Docs
+
+// Variables
+$ifrn-green: #00823b;
+$ifrn-green-hover: #00602b;
+$ifrn-red: #cb2c31;
+$ifrn-blue: #0266b3;
+$ifrn-gray-bg: #f8f9fa;
+$ifrn-border: #e0e0e0;
+$ifrn-text-dark: #212529;
+
+// Global Typography & Links
+body {
+  color: $ifrn-text-dark;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  color: $ifrn-green;
+  font-weight: 600;
+}
+
+h1 {
+  border-bottom: 2px solid $ifrn-green;
+  padding-bottom: 0.4rem;
+}
+
+a {
+  color: $ifrn-blue;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: darken($ifrn-blue, 15%);
+  }
+}
+
+// Custom Buttons
+.btn-ifrn {
+  display: inline-block;
+  background-color: $ifrn-green;
+  color: #ffffff !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+  border: none;
+
+  &:hover {
+    background-color: $ifrn-green-hover;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+    text-decoration: none !important;
+  }
+}
+
+// Category Cards Grid
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.category-card {
+  background-color: #ffffff;
+  border: 1px solid $ifrn-border;
+  border-top: 4px solid $ifrn-green;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+}
+
+// Table of Contents (TOC) Box
+.toc-box, details.toc-details {
+  background-color: $ifrn-gray-bg;
+  border-left: 4px solid $ifrn-green;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+
+  ul {
+    margin-bottom: 0;
+    padding-left: 1.2rem;
+  }
+}
+
+// Callouts / Blockquotes (Dica & Importante)
+blockquote {
+  border-left: 4px solid $ifrn-blue;
+  background-color: lighten($ifrn-blue, 48%);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 0 6px 6px 0;
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  strong {
+    color: $ifrn-blue;
+  }
+
+  // Dica Callout
+  &.dica, &:has(strong:contains("Dica")) {
+    border-left-color: $ifrn-green;
+    background-color: lighten($ifrn-green, 60%);
+    strong {
+      color: $ifrn-green;
+    }
+  }
+
+  // Importante Callout
+  &.importante, &:has(strong:contains("Importante")) {
+    border-left-color: $ifrn-red;
+    background-color: lighten($ifrn-red, 45%);
+    strong {
+      color: $ifrn-red;
+    }
+  }
+}
+
+// Header & Navigation tweaks
+.site-header {
+  border-top: 4px solid $ifrn-green;
+}
+
+.site-title {
+  color: $ifrn-green !important;
+  font-weight: 700;
+}
