@@ -28,6 +28,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-remote-theme
+  - jekyll-include-cache
 
 # Coleções de Documentação
 collections:
