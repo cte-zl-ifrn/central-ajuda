@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+<div class="category-page-wrapper">
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb-nav">
+    <ol class="breadcrumb-list">
+      <li><a href="{{ site.baseurl }}/"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><i class="fa-solid fa-chevron-right breadcrumb-separator"></i></li>
+      <li><a href="{{ site.baseurl }}/#categorias">Categorias</a></li>
+      <li><i class="fa-solid fa-chevron-right breadcrumb-separator"></i></li>
+      <li class="active">{{ page.title }}</li>
+    </ol>
+  </nav>
+
+  <!-- Category Header -->
+  <header class="category-page-header">
+    <h1 class="category-header-title"><i class="fa-solid fa-folder-open"></i> {{ page.title }}</h1>
+    {% if page.description %}
+    <p class="category-header-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <!-- Article List in Category -->
+  <section class="category-articles-section">
+    <div class="articles-list">
+      {% assign matching_count = 0 %}
+      {% for doc in site.docs %}
+        {% assign is_in_category = false %}
+        
+        {% if doc.categories contains page.category_slug %}
+          {% assign is_in_category = true %}
+        {% elsif doc.category == page.category_slug %}
+          {% assign is_in_category = true %}
+        {% elsif page.category_slug == 'ambiente_virtual' and doc.url contains 'ambiente-virtual' %}
+          {% assign is_in_category = true %}
+        {% elsif page.category_slug == 'proitec' and doc.url contains 'proitec' %}
+          {% assign is_in_category = true %}
+        {% elsif page.category_slug == 'chamados' and doc.url contains 'central-servicos' %}
+          {% assign is_in_category = true %}
+        {% elsif page.category_slug == 'live' and doc.url contains 'transmissoes' %}
+          {% assign is_in_category = true %}
+        {% elsif page.category_slug == 'grafico' and doc.url contains 'materiais' %}
+          {% assign is_in_category = true %}
+        {% endif %}
+
+        {% if is_in_category %}
+          {% assign matching_count = matching_count | plus: 1 %}
+          <article class="article-summary-card">
+            <div class="article-icon"><i class="fa-regular fa-file-lines"></i></div>
+            <div class="article-details">
+              <h2 class="article-title"><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a></h2>
+              <p class="article-excerpt">{{ doc.description | default: doc.content | strip_html | truncatewords: 30 }}</p>
+              
+              <!-- Multi-category badges -->
+              <div class="article-categories-tags">
+                {% if doc.categories %}
+                  {% for cat in doc.categories %}
+                    <a href="{{ site.baseurl }}/category/{{ cat }}/" class="cat-tag-pill">
+                      <i class="fa-solid fa-tag"></i> {{ cat | replace: '_', ' ' | replace: '-', ' ' | capitalize }}
+                    </a>
+                  {% endfor %}
+                {% else %}
+                  <a href="{{ site.baseurl }}/category/{{ page.category_slug }}/" class="cat-tag-pill">
+                    <i class="fa-solid fa-tag"></i> {{ page.title }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </article>
+        {% endif %}
+      {% endfor %}
+
+      {% if matching_count == 0 %}
+        <div class="no-articles-found">
+          <p><i class="fa-solid fa-info-circle"></i> Nenhum tutorial encontrado nesta categoria no momento.</p>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+</div>

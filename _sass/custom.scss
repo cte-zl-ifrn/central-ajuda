@@ -1,112 +1,592 @@
-// Custom SCSS - Identidade IFRN para Just the Docs
+// Custom SCSS - Identidade Visual Central de Ajuda IFRN (ajuda.ead.ifrn.edu.br)
 
-// Variables
-$ifrn-green: #00823b;
-$ifrn-green-hover: #00602b;
+// Color Variables
+$ifrn-green: #359737;
+$ifrn-green-dark: #00823b;
+$ifrn-green-light: #eef7ee;
 $ifrn-red: #cb2c31;
 $ifrn-blue: #0266b3;
+$ifrn-dark-bg: #1f1f1f;
 $ifrn-gray-bg: #f8f9fa;
-$ifrn-border: #e0e0e0;
-$ifrn-text-dark: #212529;
+$ifrn-border: #e2e8f0;
+$ifrn-text: #2b2b2b;
+$ifrn-text-muted: #696969;
 
-// Global Typography & Links
+// Global Reset & Base Typography
+* {
+  box-sizing: border-box;
+}
+
 body {
-  color: $ifrn-text-dark;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-h1, h2, h3, h4 {
-  color: $ifrn-green;
-  font-weight: 600;
-}
-
-h1 {
-  border-bottom: 2px solid $ifrn-green;
-  padding-bottom: 0.4rem;
+  margin: 0;
+  padding: 0;
+  color: $ifrn-text;
+  font-family: 'Open Sans', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f3f5f6;
+  line-height: 1.6;
 }
 
 a {
-  color: $ifrn-blue;
+  color: $ifrn-green-dark;
   text-decoration: none;
   &:hover {
+    color: darken($ifrn-green-dark, 10%);
     text-decoration: underline;
-    color: #004085;
   }
 }
 
-// Custom Buttons
-.btn-ifrn {
-  display: inline-block;
-  background-color: $ifrn-green;
-  color: #ffffff !important;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none !important;
-  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
-  border: none;
-
-  &:hover {
-    background-color: $ifrn-green-hover;
-    color: #ffffff !important;
-    transform: translateY(-1px);
-    text-decoration: none !important;
-  }
-}
-
-// Category Cards Grid
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-.category-card {
+// ----------------------------------------------------
+// 1. Top Navigation Header
+// ----------------------------------------------------
+.site-header-nav {
   background-color: #ffffff;
-  border: 1px solid $ifrn-border;
-  border-top: 4px solid $ifrn-green;
+  border-bottom: 3px solid $ifrn-green;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none !important;
+
+    .brand-badge {
+      background-color: $ifrn-green;
+      color: #ffffff;
+      padding: 0.35rem 0.8rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .brand-title {
+      color: $ifrn-text;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+  }
+
+  .header-aux-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: $ifrn-text-muted;
+
+      &:hover {
+        color: $ifrn-green-dark;
+      }
+    }
+
+    .btn-suap {
+      background-color: $ifrn-green;
+      color: #ffffff !important;
+      padding: 0.4rem 0.9rem;
+      border-radius: 4px;
+      text-decoration: none !important;
+      &:hover {
+        background-color: $ifrn-green-dark;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------
+// 2. Hero Section (Home)
+// ----------------------------------------------------
+.hero-banner {
+  background: linear-gradient(135deg, $ifrn-green-dark 0%, $ifrn-green 100%);
+  color: #ffffff;
+  padding: 4rem 1.5rem 5rem 1.5rem;
+  text-align: center;
+
+  .hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    color: #ffffff;
+    border-bottom: none;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    margin-bottom: 2rem;
+  }
+
+  .hero-search-box {
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto;
+
+    .search-input-wrapper {
+      display: flex;
+      align-items: center;
+      background-color: #ffffff;
+      border-radius: 30px;
+      padding: 0.4rem 0.5rem 0.4rem 1.2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+
+      .search-icon {
+        color: $ifrn-text-muted;
+        font-size: 1.1rem;
+        margin-right: 0.7rem;
+      }
+
+      input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        color: $ifrn-text;
+        background: transparent;
+        &::placeholder {
+          color: #94a3b8;
+        }
+      }
+
+      .btn-search-submit {
+        background-color: $ifrn-green;
+        color: #ffffff;
+        border: none;
+        padding: 0.6rem 1.4rem;
+        border-radius: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s ease;
+
+        &:hover {
+          background-color: $ifrn-green-dark;
+        }
+      }
+    }
+  }
+
+  .search-results-preview {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    z-index: 1000;
+    text-align: left;
+    overflow: hidden;
+
+    .preview-item {
+      display: block;
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: $ifrn-text;
+      text-decoration: none !important;
+
+      &:hover {
+        background-color: $ifrn-green-light;
+      }
+
+      .preview-title {
+        display: block;
+        font-weight: 700;
+        color: $ifrn-green-dark;
+        margin-bottom: 0.2rem;
+      }
+
+      .preview-desc {
+        font-size: 0.85rem;
+        color: $ifrn-text-muted;
+      }
+    }
+
+    .preview-none {
+      padding: 1rem;
+      color: $ifrn-text-muted;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// ----------------------------------------------------
+// 3. Inner Header Banner
+// ----------------------------------------------------
+.inner-header-banner {
+  background-color: $ifrn-green-dark;
+  color: #ffffff;
+  padding: 1.2rem 1.5rem;
+
+  .inner-header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .back-home-link {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none !important;
+
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
+
+    .inner-search-box {
+      .inner-search-form {
+        display: flex;
+        align-items: center;
+        background-color: rgba(255,255,255,0.2);
+        border-radius: 4px;
+        padding: 0.3rem 0.6rem;
+
+        input {
+          border: none;
+          outline: none;
+          background: transparent;
+          color: #ffffff;
+          font-size: 0.9rem;
+          &::placeholder {
+            color: rgba(255,255,255,0.7);
+          }
+        }
+
+        button {
+          background: transparent;
+          border: none;
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------
+// 4. Main Content Container
+// ----------------------------------------------------
+.main-content-wrapper {
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
+// ----------------------------------------------------
+// 5. Category Cards Grid (Home)
+// ----------------------------------------------------
+.category-section {
+  margin-bottom: 3.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: $ifrn-green-dark;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid $ifrn-green;
+  padding-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.front-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card-item {
+  background-color: #ffffff;
   border-radius: 8px;
-  padding: 1.25rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #e2e8f0;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: all 0.25s ease-in-out;
+  border-top: 4px solid transparent;
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    border-top-color: $ifrn-green;
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $ifrn-green-light;
+    color: $ifrn-green-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .card-content {
+    flex: 1;
+
+    .card-title {
+      margin: 0 0 0.4rem 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+
+      a {
+        color: $ifrn-text;
+        text-decoration: none;
+        &:hover {
+          color: $ifrn-green-dark;
+        }
+      }
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: $ifrn-text-muted;
+      margin: 0 0 0.8rem 0;
+      line-height: 1.4;
+    }
+
+    .card-link {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: $ifrn-green-dark;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------
+// 6. Article List & Summary Cards
+// ----------------------------------------------------
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.article-summary-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: $ifrn-green;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  .article-icon {
+    font-size: 1.4rem;
+    color: $ifrn-green-dark;
+    margin-top: 0.2rem;
+  }
+
+  .article-details {
+    flex: 1;
+
+    .article-title {
+      margin: 0 0 0.3rem 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+
+      a {
+        color: $ifrn-text;
+        text-decoration: none;
+        &:hover {
+          color: $ifrn-green-dark;
+        }
+      }
+    }
+
+    .article-excerpt {
+      margin: 0 0 0.6rem 0;
+      font-size: 0.92rem;
+      color: $ifrn-text-muted;
+    }
+  }
+}
+
+// Category Tag Pills
+.article-categories-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cat-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: $ifrn-green-light;
+  color: $ifrn-green-dark !important;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none !important;
+
+  &:hover {
+    background-color: darken($ifrn-green-light, 5%);
+  }
+}
+
+// ----------------------------------------------------
+// 7. Category Page & Breadcrumbs
+// ----------------------------------------------------
+.breadcrumb-nav {
+  margin-bottom: 1.5rem;
+
+  .breadcrumb-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+
+    a {
+      color: $ifrn-text-muted;
+      &:hover {
+        color: $ifrn-green-dark;
+      }
+    }
+
+    .breadcrumb-separator {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+
+    .active {
+      color: $ifrn-green-dark;
+      font-weight: 700;
+    }
+  }
+}
+
+.category-page-header {
+  background-color: #ffffff;
+  border-left: 5px solid $ifrn-green;
+  padding: 1.5rem 1.8rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+
+  .category-header-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+    color: $ifrn-green-dark;
+    border-bottom: none;
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .category-header-description {
+    margin: 0;
+    color: $ifrn-text-muted;
+    font-size: 1rem;
+  }
+}
+
+// ----------------------------------------------------
+// 8. Article Layout Page
+// ----------------------------------------------------
+.article-page-wrapper {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.article-header {
+  margin-bottom: 2rem;
+
+  .article-category-badges {
+    margin-bottom: 0.8rem;
+  }
+
+  .article-main-title {
+    font-size: 2rem;
+    color: $ifrn-green-dark;
+    margin: 0 0 0.8rem 0;
+    border-bottom: 2px solid $ifrn-green-light;
+    padding-bottom: 0.5rem;
+  }
+
+  .article-meta-bar {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    color: $ifrn-text-muted;
+  }
+}
+
+.article-body-content {
+  font-size: 1.05rem;
+  line-height: 1.7;
+
+  h2 {
+    color: $ifrn-green-dark;
+    font-size: 1.45rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid $ifrn-green;
+    padding-bottom: 0.3rem;
   }
 
   h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.15rem;
+    color: $ifrn-green;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
   }
 
-  p {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 1rem;
-    line-height: 1.4;
+  ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
   }
-}
 
-// Table of Contents (TOC) Box
-.toc-box, details.toc-details {
-  background-color: $ifrn-gray-bg;
-  border-left: 4px solid $ifrn-green;
-  border-radius: 4px;
-  padding: 1rem 1.25rem;
-  margin: 1.5rem 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-
-  ul {
-    margin-bottom: 0;
-    padding-left: 1.2rem;
+  li {
+    margin-bottom: 0.4rem;
   }
 }
 
-// Callouts / Blockquotes (Dica & Importante)
+// Callouts / Blockquotes
 blockquote {
   border-left: 4px solid $ifrn-blue;
   background-color: #e3f2fd;
@@ -123,16 +603,14 @@ blockquote {
     color: $ifrn-blue;
   }
 
-  // Dica Callout
   &.dica {
     border-left-color: $ifrn-green;
-    background-color: #e8f5e9;
+    background-color: $ifrn-green-light;
     strong {
-      color: $ifrn-green;
+      color: $ifrn-green-dark;
     }
   }
 
-  // Importante Callout
   &.importante {
     border-left-color: $ifrn-red;
     background-color: #ffebee;
@@ -142,12 +620,150 @@ blockquote {
   }
 }
 
-// Header & Navigation tweaks
-.site-header {
-  border-top: 4px solid $ifrn-green;
+// Help & Support Widget
+.article-help-widget {
+  margin-top: 3.5rem;
+  background-color: $ifrn-green-light;
+  border: 1px solid lighten($ifrn-green, 35%);
+  border-radius: 12px;
+  padding: 1.8rem;
+
+  .help-widget-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .help-widget-text {
+    flex: 1;
+    h3 {
+      margin: 0 0 0.4rem 0;
+      color: $ifrn-green-dark;
+      font-size: 1.2rem;
+    }
+    p {
+      margin: 0;
+      color: $ifrn-text;
+      font-size: 0.95rem;
+    }
+  }
+
+  .help-widget-actions {
+    display: flex;
+    gap: 0.8rem;
+
+    .btn-help-primary {
+      background-color: $ifrn-green;
+      color: #ffffff !important;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none !important;
+      &:hover {
+        background-color: $ifrn-green-dark;
+      }
+    }
+
+    .btn-help-secondary {
+      background-color: #ffffff;
+      color: $ifrn-green-dark !important;
+      border: 1px solid $ifrn-green;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none !important;
+      &:hover {
+        background-color: $ifrn-green-light;
+      }
+    }
+  }
 }
 
-.site-title {
-  color: $ifrn-green !important;
-  font-weight: 700;
+// ----------------------------------------------------
+// 9. Footer Section
+// ----------------------------------------------------
+.site-footer {
+  background-color: $ifrn-dark-bg;
+  color: #ffffff;
+  margin-top: 4rem;
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .footer-branding {
+    h3 {
+      color: #ffffff;
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+    }
+    p {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin: 0 0 0.4rem 0;
+    }
+  }
+
+  .footer-links {
+    h4 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        margin-bottom: 0.5rem;
+        a {
+          color: #94a3b8;
+          text-decoration: none;
+          font-size: 0.9rem;
+          &:hover {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-contact {
+    h4 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+    }
+    p {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin: 0 0 0.5rem 0;
+      i {
+        color: $ifrn-green;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .footer-bottom {
+    background-color: #111111;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    font-size: 0.85rem;
+    color: #64748b;
+
+    p {
+      margin: 0;
+    }
+  }
 }

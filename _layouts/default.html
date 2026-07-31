@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }} - IFRN ZL</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <!-- Theme SCSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+<body class="{% if page.url == '/' or page.layout == 'home' %}is-home{% else %}is-inner{% endif %}">
+
+  <!-- Top Navigation Header -->
+  <header class="site-header-nav">
+    <div class="header-container">
+      <div class="header-branding">
+        <a href="{{ site.baseurl }}/" class="header-logo-link">
+          <span class="brand-badge"><i class="fa-solid fa-hospital-user"></i> Central de Ajuda</span>
+          <span class="brand-title">IFRN Campus Natal-Zona Leste</span>
+        </a>
+      </div>
+      <nav class="header-aux-links">
+        <a href="https://ead.ifrn.edu.br/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> Portal EaD</a>
+        <a href="https://suap.ifrn.edu.br/" target="_blank" rel="noopener" class="btn-suap"><i class="fa-solid fa-user-check"></i> SUAP</a>
+      </nav>
+    </div>
+  </header>
+
+  {% if page.url == '/' or page.layout == 'home' %}
+  <!-- Hero Section for Home -->
+  <section class="hero-banner">
+    <div class="hero-container">
+      <h1 class="hero-title">Bem-vindo à Central de Ajuda do IFRN Campus Natal - Zona Leste</h1>
+      <p class="hero-subtitle">Como podemos te ajudar?</p>
+      
+      <!-- Global Search Form -->
+      <div class="hero-search-box">
+        <form action="{{ site.baseurl }}/search/" method="get" class="search-form">
+          <div class="search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="search-input" name="q" placeholder="Pesquise por tutoriais, Moodle, SUAP, ProITEC..." autocomplete="off" required>
+            <button type="submit" class="btn-search-submit">Buscar</button>
+          </div>
+        </form>
+        <div id="search-results-preview" class="search-results-preview"></div>
+      </div>
+    </div>
+  </section>
+  {% else %}
+  <!-- Inner Page Banner -->
+  <section class="inner-header-banner">
+    <div class="inner-header-container">
+      <div class="inner-header-title">
+        <a href="{{ site.baseurl }}/" class="back-home-link"><i class="fa-solid fa-arrow-left"></i> Central de Ajuda</a>
+      </div>
+      <div class="inner-search-box">
+        <form action="{{ site.baseurl }}/search/" method="get" class="inner-search-form">
+          <input type="text" id="inner-search-input" name="q" placeholder="Buscar na Central de Ajuda..." autocomplete="off">
+          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Main Content Container -->
+  <main class="main-content-wrapper">
+    <div class="content-container">
+      {{ content }}
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-branding">
+        <h3>Central de Ajuda IFRN ZL</h3>
+        <p>Diretoria de Educação a Distância e Tecnologias Educacionais (DEAD/ZL)</p>
+        <p>Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte</p>
+      </div>
+      <div class="footer-links">
+        <h4>Links Úteis</h4>
+        <ul>
+          <li><a href="{{ site.baseurl }}/">Página Inicial</a></li>
+          <li><a href="{{ site.baseurl }}/category/ambiente_virtual/">Moodle / AVA</a></li>
+          <li><a href="{{ site.baseurl }}/category/proitec/">Cursos ProITEC</a></li>
+          <li><a href="{{ site.baseurl }}/category/chamados/">Central de Serviços (SUAP)</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Atendimento</h4>
+        <p><i class="fa-solid fa-envelope"></i> suporte.zl@ifrn.edu.br</p>
+        <p><i class="fa-solid fa-phone"></i> (84) 3092-8900</p>
+        <p><i class="fa-solid fa-location-dot"></i> Rua da Maternidade, 12, das Quintas - Natal/RN</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2026 Campus Avançado Natal-Zona Leste - IFRN. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Search JS script -->
+  <script src="{{ site.baseurl }}/assets/js/search.js"></script>
+</body>
+</html>

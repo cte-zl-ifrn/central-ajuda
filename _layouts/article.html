@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<div class="article-page-wrapper">
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav">
+    <ol class="breadcrumb-list">
+      <li><a href="{{ site.baseurl }}/"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><i class="fa-solid fa-chevron-right breadcrumb-separator"></i></li>
+      {% if page.categories and page.categories.first %}
+        <li><a href="{{ site.baseurl }}/category/{{ page.categories.first }}/">{{ page.parent | default: page.categories.first | replace: '_', ' ' | replace: '-', ' ' | capitalize }}</a></li>
+        <li><i class="fa-solid fa-chevron-right breadcrumb-separator"></i></li>
+      {% elsif page.parent %}
+        <li><a href="{{ site.baseurl }}/#categorias">{{ page.parent }}</a></li>
+        <li><i class="fa-solid fa-chevron-right breadcrumb-separator"></i></li>
+      {% endif %}
+      <li class="active">{{ page.title }}</li>
+    </ol>
+  </nav>
+
+  <!-- Article Header & Category Badges -->
+  <header class="article-header">
+    <div class="article-category-badges">
+      {% if page.categories %}
+        {% for cat in page.categories %}
+          <a href="{{ site.baseurl }}/category/{{ cat }}/" class="cat-tag-pill">
+            <i class="fa-solid fa-tag"></i> {{ cat | replace: '_', ' ' | replace: '-', ' ' | capitalize }}
+          </a>
+        {% endfor %}
+      {% elsif page.parent %}
+        <span class="cat-tag-pill"><i class="fa-solid fa-folder"></i> {{ page.parent }}</span>
+      {% endif %}
+    </div>
+    
+    <h1 class="article-main-title">{{ page.title }}</h1>
+
+    <div class="article-meta-bar">
+      <span><i class="fa-regular fa-clock"></i> Atualizado recentemente</span>
+      <span><i class="fa-regular fa-eye"></i> Central de Ajuda IFRN ZL</span>
+    </div>
+  </header>
+
+  <!-- Article Body Content -->
+  <div class="article-body-content">
+    {{ content }}
+  </div>
+
+  <!-- Help & Support Widget at bottom of article -->
+  <div class="article-help-widget">
+    <div class="help-widget-inner">
+      <div class="help-widget-text">
+        <h3><i class="fa-solid fa-circle-question"></i> Esta página foi útil?</h3>
+        <p>Se você ainda tiver dúvidas ou precisar de assistência adicional, nossa equipe de suporte está à disposição.</p>
+      </div>
+      <div class="help-widget-actions">
+        <a href="https://suap.ifrn.edu.br/" target="_blank" rel="noopener" class="btn-help-primary"><i class="fa-solid fa-headset"></i> Abrir Chamado no SUAP</a>
+        <a href="mailto:suporte.zl@ifrn.edu.br" class="btn-help-secondary"><i class="fa-solid fa-envelope"></i> Enviar E-mail</a>
+      </div>
+    </div>
+  </div>
+</div>

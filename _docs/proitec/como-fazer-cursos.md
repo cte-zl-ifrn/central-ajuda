@@ -1,9 +1,11 @@
 ---
+layout: article
 title: Como fazer os cursos do ProITEC?
 parent: Cursos ProITEC
-nav_order: 1
-has_children: false
-has_toc: true
+categories:
+  - proitec
+  - ambiente_virtual
+  - chamados
 description: Tutorial completo sobre como acessar e realizar os cursos do ProITEC no Campus Avançado Natal-Zona Leste do IFRN.
 ---
 
@@ -25,7 +27,9 @@ Neste tutorial, você aprenderá passo a passo como acessar a plataforma online,
 
 ---
 
-> **Dica**: Recomendamos utilizar um computador ou notebook com navegador atualizado (Google Chrome, Firefox ou Edge) para uma melhor experiência no ambiente virtual de aprendizagem.
+<blockquote class="dica">
+  <p><strong>Dica</strong>: Recomendamos utilizar um computador ou notebook com navegador atualizado (Google Chrome, Firefox ou Edge) para uma melhor experiência no ambiente virtual de aprendizagem.</p>
+</blockquote>
 
 ## Passo 1: Acesse os cursos
 
@@ -37,7 +41,9 @@ Para iniciar seus estudos no ProITEC, siga o fluxo de acesso descrito abaixo:
 4. Após realizar o login, navegue até a seção **Meus Cursos** no painel principal.
 5. Selecione o curso correspondente ao ProITEC no qual você está matriculado.
 
-> **Importante**: Caso seja seu primeiro acesso e você não lembre da sua senha, utilize a opção "Esqueceu o seu usuário ou senha?" na tela de login para redefini-la via e-mail cadastrado no SUAP.
+<blockquote class="importante">
+  <p><strong>Importante</strong>: Caso seja seu primeiro acesso e você não lembre da sua senha, utilize a opção "Esqueceu o seu usuário ou senha?" na tela de login para redefini-la via e-mail cadastrado no SUAP.</p>
+</blockquote>
 
 ---
 
@@ -63,17 +69,15 @@ Os cursos do ProITEC são estruturados em módulos para facilitar o seu aprendiz
 - Exercícios fixadores interativos.
 - Realização do simulado de verificação de aprendizagem.
 
-> **Dica**: Conclua todas as atividades com antecedência em relação ao prazo final estipulado no cronograma para evitar instabilidades de última hora.
-
 ---
 
 ## Passo 3: Adquira seu certificado
 
 Para ter direito ao certificado digital de conclusão do curso ProITEC, você precisa cumprir os requisitos listados no checklist a seguir:
 
-- [ ] Ter completado 100% da visualização dos módulos obrigatórios.
-- [ ] Ter obtido nota mínima de **6,0 (seis)** nas atividades avaliativas do curso.
-- [ ] Preencher o **Questionário de Avaliação do Curso** no Moodle.
+- [x] Ter completado 100% da visualização dos módulos obrigatórios.
+- [x] Ter obtido nota mínima de **6,0 (seis)** nas atividades avaliativas do curso.
+- [x] Preencher o **Questionário de Avaliação do Curso** no Moodle.
 
 Após cumprir os requisitos:
 
@@ -92,14 +96,10 @@ Verifique se seus dados de login no SUAP estão atualizados. Se o erro persistir
 ### 2. O curso tem horário fixo para assistir às aulas?
 Não. Os cursos são assíncronos, o que significa que você pode estudar nos horários que forem mais convenientes para sua rotina, respeitando apenas os prazos das avaliações.
 
-### 3. Posso fazer o curso pelo celular?
-Sim, o ambiente Moodle é responsivo e também pode ser acessado através do aplicativo oficial **Moodle Mobile** (disponível para Android e iOS).
-
 ---
 
 ## Links relacionados
 
-- [Ambiente Virtual de Aprendizagem (AVA)]({{ site.baseurl }}/docs/ambiente-virtual/)
+- [Ambiente Virtual de Aprendizagem (AVA)]({{ site.baseurl }}/category/ambiente_virtual/)
 - [Portal Oficial do IFRN](https://portal.ifrn.edu.br/)
 - [Sistema Unificado de Administração Pública (SUAP)](https://suap.ifrn.edu.br/)
-- [Jornada de Integração IFRN](https://ead.ifrn.edu.br/)
