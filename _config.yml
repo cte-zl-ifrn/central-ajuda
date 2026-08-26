@@ -34,7 +34,7 @@ plugins:
 collections:
   docs:
     output: true
-    permalink: /docs/:collection/:path/
+    permalink: /docs/:path/
 
 # Configurações padrão
 defaults:
