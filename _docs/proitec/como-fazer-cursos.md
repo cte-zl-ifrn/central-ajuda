@@ -8,10 +8,9 @@ categories:
   - chamados
 description: Tutorial completo sobre como acessar e realizar os cursos do ProITEC no Campus Avançado Natal-Zona Leste do IFRN.
 ---
-
 # Como fazer os cursos do ProITEC?
 
-O **Programa de Iniciação Tecnológica e Cidadania (ProITEC)** é uma ação institucional do IFRN destinada aos estudantes de escolas públicas do estado do Rio Grande do Norte, com o objetivo de aprofundar a aprendizagem e preparar os alunos para o Exame de Seleção.
+O **Programa de Iniciação Tecnológica e Cidadania (ProITEC)** é uma ação institucional do *IFRN* destinada aos estudantes de escolas públicas do estado do Rio Grande do Norte, com o objetivo de aprofundar a aprendizagem e preparar os alunos para o Exame de Seleção.
 
 Neste tutorial, você aprenderá passo a passo como acessar a plataforma online, navegar pelos módulos de estudo e emitir o seu certificado de conclusão.
 
@@ -20,15 +19,15 @@ Neste tutorial, você aprenderá passo a passo como acessar a plataforma online,
 ## Sumário
 
 - [#passo-1-acesse-os-cursos](#passo-1-acesse-os-cursos)
-- [#passo-2-faça-os-cursos](#passo-2-faça-os-cursos)
+- [#passo-2-faça-os-cursos](#passo-2-fa%C3%A7a-os-cursos)
 - [#passo-3-adquira-seu-certificado](#passo-3-adquira-seu-certificado)
 - [#perguntas-frequentes](#perguntas-frequentes)
 - [#links-relacionados](#links-relacionados)
 
 ---
 
-<blockquote class="dica">
-  <p><strong>Dica</strong>: Recomendamos utilizar um computador ou notebook com navegador atualizado (Google Chrome, Firefox ou Edge) para uma melhor experiência no ambiente virtual de aprendizagem.</p>
+<blockquote class="dica">\
+<p><strong>Dica</strong>: Recomendamos utilizar um computador ou notebook com navegador atualizado (Google Chrome, Firefox ou Edge) para uma melhor experiência no ambiente virtual de aprendizagem.</p>\
 </blockquote>
 
 ## Passo 1: Acesse os cursos
@@ -41,8 +40,8 @@ Para iniciar seus estudos no ProITEC, siga o fluxo de acesso descrito abaixo:
 4. Após realizar o login, navegue até a seção **Meus Cursos** no painel principal.
 5. Selecione o curso correspondente ao ProITEC no qual você está matriculado.
 
-<blockquote class="importante">
-  <p><strong>Importante</strong>: Caso seja seu primeiro acesso e você não lembre da sua senha, utilize a opção "Esqueceu o seu usuário ou senha?" na tela de login para redefini-la via e-mail cadastrado no SUAP.</p>
+<blockquote class="importante">\
+<p><strong>Importante</strong>: Caso seja seu primeiro acesso e você não lembre da sua senha, utilize a opção "Esqueceu o seu usuário ou senha?" na tela de login para redefini-la via e-mail cadastrado no SUAP.</p>\
 </blockquote>
 
 ---
@@ -91,15 +90,19 @@ Após cumprir os requisitos:
 ## Perguntas Frequentes
 
 ### 1. Não consigo acessar o Moodle. O que devo fazer?
+
 Verifique se seus dados de login no SUAP estão atualizados. Se o erro persistir, abra um chamado na Central de Serviços ou envie e-mail para a equipe de suporte.
 
 ### 2. O curso tem horário fixo para assistir às aulas?
+
 Não. Os cursos são assíncronos, o que significa que você pode estudar nos horários que forem mais convenientes para sua rotina, respeitando apenas os prazos das avaliações.
 
 ---
 
 ## Links relacionados
 
-- [Ambiente Virtual de Aprendizagem (AVA)]({{ site.baseurl }}/category/ambiente_virtual/)
+- [Ambiente Virtual de Aprendizagem (AVA)]({{ site.baseurl }}/category/ambiente\_virtual/)
 - [Portal Oficial do IFRN](https://portal.ifrn.edu.br/)
 - [Sistema Unificado de Administração Pública (SUAP)](https://suap.ifrn.edu.br/)
+
+
