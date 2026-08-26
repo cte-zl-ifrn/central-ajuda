@@ -14,6 +14,8 @@ description: Tutorial completo sobre como acessar e realizar os cursos do ProITE
 
 O **Programa de Iniciação Tecnológica e Cidadania (ProITEC)** é uma ação institucional do *IFRN* destinada aos estudantes de escolas públicas do estado do *Rio Grande do Norte*, com o objetivo de aprofundar a aprendizagem e preparar os alunos para o Exame de Seleção.
 
+![asdf](../../assets/images/proitec/como-fazer-cursos-48fa13ce.png)
+
 ![Outra logo. mesmo arquivo 2 vezes.](../../assets/images/proitec/como-fazer-cursos-c15bda0f.png)
 
 Neste tutorial, você aprenderá passo a passo como acessar a plataforma online, navegar pelos módulos de estudo e emitir o seu certificado de conclusão.
