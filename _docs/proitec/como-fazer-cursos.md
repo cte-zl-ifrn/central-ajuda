@@ -8,15 +8,11 @@ categories:
   - chamados
 description: Tutorial completo sobre como acessar e realizar os cursos do ProITEC no Campus Avançado Natal-Zona Leste do IFRN.
 ---
-![Logo do LAIS](../../assets/images/proitec/como-fazer-cursos-c44065ad.png)
-
 # Como fazer os cursos do ProITEC?
 
 O **Programa de Iniciação Tecnológica e Cidadania (ProITEC)** é uma ação institucional do *IFRN* destinada aos estudantes de escolas públicas do estado do *Rio Grande do Norte*, com o objetivo de aprofundar a aprendizagem e preparar os alunos para o Exame de Seleção.
 
-![asdf](../../assets/images/proitec/como-fazer-cursos-48fa13ce.png)
-
-![Outra logo. mesmo arquivo 2 vezes.](../../assets/images/proitec/como-fazer-cursos-c15bda0f.png)
+![euzinho](https://raw.githubusercontent.com/cte-zl-ifrn/central-ajuda/main/assets/images/proitec/como-fazer-cursos-56a35995.png)
 
 Neste tutorial, você aprenderá passo a passo como acessar a plataforma online, navegar pelos módulos de estudo e emitir o seu certificado de conclusão.
 
